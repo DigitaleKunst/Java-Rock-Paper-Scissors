@@ -1,0 +1,10 @@
+const computerChoice = ["Rock", "Paper", "Scissors"];
+
+function computerPlay() {   
+    return computerChoice[Math.floor(Math.random() * 3)]
+}
+
+
+
+
+console.log(computerPlay());
