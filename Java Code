@@ -1,10 +1,18 @@
-const computerChoice = ["Rock", "Paper", "Scissors"];
+const computerOptions = ["Rock", "Paper", "Scissors"];
+const playerChoice = "Rock" 
 
-function computerPlay() {   
-    return computerChoice[Math.floor(Math.random() * 3)]
+
+function computerChoice() {   
+    return computerOptions[Math.floor(Math.random() * 3)]
+}
+
+function play1Round(computerChoice) {
+    if (computerChoice == playerChoice) {
+        return "its a Draw!"
+    } 
 }
 
 
-
-
-console.log(computerPlay());
+console.log(computerChoice() + " is computers choice");
+console.log(playerChoice + " is your choice");
+console.log(play1Round());
