@@ -1,18 +1,50 @@
-const computerOptions = ["Rock", "Paper", "Scissors"];
-const playerChoice = "Rock" 
+play1Round("Rock");
 
 
-function computerChoice() {   
+function playMatch() {
+    play1Round("Rock");
+   
+}
+
+
+
+
+function play1Round(playerChoice) {
+    let playerScore = 0;
+    let computerScore = 0;
+    let computerChoice = computerPlay();
+    console.log(computerChoice + " is computers choice");
+    console.log(playerChoice + " is Players choice");
+    if (computerChoice == playerChoice) {
+        console.log("Its a Draw.");
+        return;
+    }
+    if (computerChoice == "Rock" && playerChoice == "Paper") {
+        console.log("You Win! " + playerChoice + "beats" + computerChoice);
+        playerScore += 1;
+        return;
+    }
+    if (computerChoice == "Paper" && playerChoice == "Scissors") {
+        console.log("You Win! " + playerChoice + " beats " + computerChoice);
+        playerScore += 1;
+        return;
+    }
+    if (computerChoice == "Scissors" && playerChoice == "Rock") {
+        console.log("You Win! " + playerChoice + " beats " + computerChoice);
+        playerScore += 1;
+        return;
+    }
+    else  {
+        console.log("You Lose! " + playerChoice + " loses to " + computerChoice);
+        computerScore += 1;
+        return;
+    }
+}
+
+function computerPlay() {
+ const computerOptions = ["Rock", "Paper", "Scissors"];
     return computerOptions[Math.floor(Math.random() * 3)]
 }
 
-function play1Round(computerChoice) {
-    if (computerChoice == playerChoice) {
-        return "its a Draw!"
-    } 
-}
 
 
-console.log(computerChoice() + " is computers choice");
-console.log(playerChoice + " is your choice");
-console.log(play1Round());
